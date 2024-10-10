@@ -1,20 +1,15 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
-func repeatMe(words string) {
-	fmt.Println(words)
-}
-
-func lenAndUpper(name string) (length int, uppercase string) {
-	length = len(name)
-	uppercase = strings.ToUpper(name)
-	return
+type person struct {
+	name    string
+	age     int
+	favFood []string
 }
 
 func main() {
-	fmt.Println(lenAndUpper("zino"))
+	favFood := []string{"Ramen"}
+	zino := person{name: "zino", age: 25, favFood: favFood}
+	fmt.Println(zino.favFood)
 }
