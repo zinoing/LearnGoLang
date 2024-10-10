@@ -8,6 +8,9 @@ import (
 
 func main() {
 	account := accounts.NewAccount("zino")
+	account.Deposit(100)
 
-	fmt.Println(*account)
+	account.ChangeOwner("nico")
+
+	fmt.Println(account.String())
 }
