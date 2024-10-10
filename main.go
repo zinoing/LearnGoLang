@@ -3,14 +3,25 @@ package main
 import (
 	"fmt"
 
-	"github.com/zinoing/learngo/accounts"
+	mydict "github.com/zinoing/learngo/dict"
 )
 
 func main() {
-	account := accounts.NewAccount("zino")
-	account.Deposit(100)
+	dictionary := mydict.Dictionary{}
+	err := dictionary.Add("first", "First word")
+	if err != nil {
+		fmt.Println(err)
+	}
 
-	account.ChangeOwner("nico")
+	err = dictionary.Delete("first")
+	if err != nil {
+		fmt.Println(err)
+	}
 
-	fmt.Println(account.String())
+	def, err := dictionary.Search("first")
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		println(def)
+	}
 }
